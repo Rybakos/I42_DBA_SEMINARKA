@@ -1,4 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cherry+Bomb+One&display=swap');
+
 *{
     padding: 0px;
     margin: 0px;
+}
+li{
+    border-radius: 30px;
+}
+.nadpis{
+    text-align: center;
+    font-size: 32px;
+    color: #F4F5F8;
+    background-color: #A51931;
+    padding: 10px;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+header {
+    background-color: #F4F5F8;
+    color: white;
+    text-align: left;
+    
+}
+footer {
+    background-color: #A51931;
+    color: #F4F5F8;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+
+}
+main{
+    background-color: #2D2A4A;
+    width: 100%;
+    height: 100VH;
+    color: #F4F5F8;
+}
+nav{
+    text-align: center;
+}
+header a{
+    font-style: none;
+    color: #4a2a2a;
+    text-decoration: none;
+    font-family: "Cherry Bomb One", serif;
+    font-size: 18px;
+    
+   
+}
+header li{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+header a:hover{
+    color: #A51931;
+}
+header li:hover{
+    background-color: #b5b6b8;
+}
+footer div:nth-child(-n+2){
+    background-color: #F4F5F8;
+    color: #2D2A4A;
+    padding: 10px;
+}
+footer div:nth-child(n+3){
+    padding: 10px;
+}
+.intro {
+    padding: 15px;
+    font-size: 1.2em;
+}
+.uvod {
+    background-color: #201e31;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.highlights h2 {
+    color: #d17b00;
+}
+
+.highlights ul {
+    list-style: none;
+    padding: 0;
+}
+
+.highlights li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+
+@media (min-width: 480px) {
+    header a{
+        font-size: 24px;
+    }
+    .nadpis{
+        font-size: 48px;
+    }
+    footer p{
+        font-size: 24px;
+    } 
+    ul{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows:auto auto auto ;
+    }  
+}
+@media (min-width: 1024px) {
+    ul{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: auto auto auto auto auto auto ;
+    }
+    footer{
+        font-size: 24px;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto ;
+    }
+    .nadpis{
+        font-size: 64px;
+    }
+    header a{
+        font-size: 32px;
+    }
 }
