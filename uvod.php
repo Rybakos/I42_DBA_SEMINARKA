@@ -1,6 +1,6 @@
 
     <div class="intro">
-                <p>Thajsko je země exotické přírody, bohaté kultury a přátelských lidí. Od rušných ulic Bangkoku po klidné pláže na jihu – každý si zde najde to své.</p>
+                <p>Thajsko je země exotické přírody, bohaté kultury a přátelských lidí. Od rušných ulic Bangkoku po klidné pláže na jihu  každý si zde najde to své.</p>
     </div>
 
     <div class="highlights">
