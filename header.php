@@ -1,3 +1,15 @@
+<?php
+$stranky=["uvod"=>"Úvod","kul"=>"Kultura","his"=>"Historie","ek"=>"Ekonomika","zaj"=>"Zajímavosti", "kon"=>"Kontaktujte nás"];
+if (isset($_GET["strana"]) && array_key_exists($_GET["strana"], $stranky)) {
+    $strana = $_GET["strana"];
+    echo "<title>" . $stranky[$strana] . "</title>";
+} else {
+    echo "<title>Úvod</title>";
+}
+                
+?>
+</head>
+<body>
 <header>
 <h1 class="nadpis">
                     <?php

@@ -1,13 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cherry+Bomb+One&display=swap');
+/*Fonty z Gůgelu*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cherry+Bomb+One&family=PT+Serif+Caption:ital@0;1&display=swap');
 
 *{
     padding: 0px;
     margin: 0px;
+} 
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-li{
-    border-radius: 30px;
+
+main {
+    flex: 1; /*Kontent stránky se roztahuje mezi footerem a headerem */
+    background-color: #2D2A4A;
+    color: #F4F5F8;
+    width: 100%;
 }
+/*Profi nastavení footeru*/
+footer {
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+    height: auto;
+    background-color: #A51931;
+    color: #F4F5F8;
+    text-align: center;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+/*Ne tak profi nastavení headeru*/
+header {
+    background-color: #F4F5F8;
+    color: white;
+    text-align: left;
+    
+}
+/* Odstranění teček z listů či jak se to jmenuje*/
+ul li {
+    list-style: none; 
+}
+
+
+/*SMĚREM DOLŮ NASTÁVÁ MOJE SCHIZOFRENICKÉ PSANÍ CSS V NÁHODNEM POŘADÍ :<*/
+
+
+/*Div kterej zarovnáva obrázek na hlavní stránce na prostředek*/
+.obr{
+    display: flex;
+    justify-content: center;
+}
+
+/*No tohle má bejt taky jen na obrázek na první stránce akorát se mi to nechce předělávat*/
+img{
+
+    width: 90%;
+    height: 75%;
+}
+/*Není to specifikovaný teda jo ale má to bejt jen na header*/
+ul{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows:auto auto auto ;
+} 
+/*Nastevení nadpisu v headeru*/
 .nadpis{
     text-align: center;
     font-size: 32px;
@@ -18,75 +76,76 @@ li{
     font-weight: 400;
     font-style: normal;
 }
-header {
-    background-color: #F4F5F8;
-    color: white;
-    text-align: left;
-    
-}
-footer {
-    background-color: #A51931;
-    color: #F4F5F8;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    
-    font-family: "Bebas Neue", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
 
-}
-main{
-    background-color: #2D2A4A;
-    width: 100%;
-    height: 100VH;
-    color: #F4F5F8;
-}
-nav{
-    text-align: center;
-}
+/*Nastavení  menu*/
 header a{
-    font-style: none;
+    font-style: none;   
     color: #4a2a2a;
     text-decoration: none;
     font-family: "Cherry Bomb One", serif;
     font-size: 18px;
-    
-   
 }
-.intro{
-    color: hotpink;
+/*hodně věcí co sdílí stejnou vlastnost v jednom :P*/
+.highlights h2, nav, .highlights li {
+    text-align: center;
 }
+.tradice p{
+    text-align: center;
+}
+/*to stejná co komentář nad tím*/
+.highlights li, .kulturni-prvky li, .tradice p, .prehled p, .historicke-obdobi li{
+    font-family: "Cherry Bomb One", serif;
+    font-weight: 400;
+}
+.kulturni-prvky li, .tradice p{
+    text-align: center;
+    font-weight: 200;
+}
+/*Prvny v divu kulturniprvky jsou hezky pod sebou*/
+.kulturni-prvky{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto; 
+}
+/*Aby byli klíčové prvky kultury hezky pod sebou v mobile first*/
+.kulturni-prvky ul{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;   
+     
+}
+/*Hodně nadpisů co sdílí stejnou věc*/
+.highlights h2, .tradice h2, .kulturni-prvky h2, .gallery h2, .prehled h2, .historicke-obdobi h2, .historie-galerie h2{
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-size: 32px;
+    padding-top: 15px;
+    color: #d17b00;
+    text-align: center;
+}
+/*Hezké odsazení věciček v menu*/
 header li{
     margin-top: 5px;
     margin-bottom: 5px;
-    text-decoration: none;
 }
+/*Úvod, Kultura atd když najedete jsou hezky červený*/
 header a:hover{
     color: #A51931;
 }
+/*Celá ta část nejen nápis úvod atd ma custom barvičku a je hezky zakulacená*/
 header li:hover{
     background-color: #b5b6b8;
+    border-radius: 25px;
 }
+/*Ve footeru první 2 divy maj bílou barvu*/
 footer div:nth-child(-n+2){
     background-color: #F4F5F8;
     color: #2D2A4A;
     padding: 10px;
 }
+/*Všechny další prvky už maj tu barvu která je nastavená ve footeru*/
 footer div:nth-child(n+3){
     padding: 10px;
-}
-.uvod {
-    background-color: #201e31;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-.highlights h2 {
-    color: #d17b00;
 }
 
 .highlights ul {
@@ -99,6 +158,54 @@ footer div:nth-child(n+3){
     margin: 10px 0;
 }
 
+.obr{
+    padding-top: 15px;
+}
+.highlights{
+    padding-top: 25px;
+}
+.kulturni-prvky li {
+   font-size: 16px;
+   padding: 5px;
+}
+
+.gallery .obr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*Nastavení velikosti a ohraničení obrázku na stránce Kultura*/
+.gallery img {
+    width: 300px;
+    margin: 10px;
+    border: #F4F5F8 solid 2.5px;
+    border-radius: 10px ;
+}
+
+/*Stránka Historie(Od teď nádherně seřazené)🙏*/
+.obrhis{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.historicke-obdobi ul{
+    display: flex ;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center ;
+}
+.obrhis img{
+    border: 2.5px #F4F5F8 solid ;
+    border: 25px;
+}
+.obrhis img:nth-last-child(1){
+    margin-bottom: 10px;
+}
+.prehled p{
+    text-align: center;
+}
+/*Tabloid*/
 @media (min-width: 480px) {
     header a{
         font-size: 24px;
@@ -111,10 +218,38 @@ footer div:nth-child(n+3){
     } 
     ul{
         display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows:auto auto auto ; 
+    }
+    .highlights h2, .tradice h2, .kulturni-prvky h2, .gallery h2{
+        padding-bottom: 0px;
+    }
+
+    .skibidi{
+        display: grid;
+        grid-template-columns: auto ;
+        grid-template-rows: auto auto; 
+    }
+
+    .highlights ul{
+        display: grid;
         grid-template-columns: auto auto;
-        grid-template-rows:auto auto auto ;
-    }  
+        grid-template-rows: auto auto;
+    }
+    .obr{
+        order: 3;
+        height: 100%;
+        width: 100%;
+    }
+    .obr img{
+        height: 100%;
+        width: 60%;
+        border: #F4F5F8 solid 5Px;
+        border-radius: 25px;
+    }
+
 }
+/*Mobajlfoun megafoun telefoun*/
 @media (min-width: 1024px) {
     ul{
         display: grid;
@@ -133,4 +268,54 @@ footer div:nth-child(n+3){
     header a{
         font-size: 32px;
     }
+    .highlights li{
+        font-size: 24px;
+    }
+    .obr img{
+        height: 400px;
+        width: 500px;    
+    }
+    .obr{
+        padding-bottom: 25px;
+    }
+    .highlights h2, .tradice h2, .kulturni-prvky h2, .gallery h2{
+        font-size: 52px;
+    }
+    .highlights li, .kulturni-prvky li, .tradice p {
+        font-size: 28px;
+    }
+    .gallery img{
+        width: 500px;
+        height: 400px;
+    }
+    /*Historie Kompjůtr*/
+    .his{
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-template-rows: auto auto;
+    }
+    .historie-galerie{
+        grid-column: 1/3;
+    }
+    .obrhis img{
+        width: 500px;
+        height: 400px;
+    }
+    .obrhis{
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-template-rows: auto auto ;
+        justify-content: center;
+    }
+    .historie-galerie h2{
+        margin-bottom: 10px;
+    }
+    .prehled p{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .historicke-obdobi li{
+        text-align: left;
+    }
+
 }
