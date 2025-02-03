@@ -4,6 +4,8 @@
 *{
     padding: 0px;
     margin: 0px;
+    border-width: 0px;
+    gap: 0px;
 } 
 body {
     height: 100vh;
@@ -20,7 +22,6 @@ main {
 /*Profi nastavení footeru*/
 footer {
     position: sticky;
-    width: 100%;
     bottom: 0;
     height: auto;
     background-color: #A51931;
@@ -30,7 +31,13 @@ footer {
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
+    width: 100%;
+} 
+/*Divy ve footeru měli mezi sebou 1px mezeru, tohle je fix kterej jsem našel:-)*/
+footer > div{
+    line-height: 1;
 }
+
 /*Ne tak profi nastavení headeru*/
 header {
     background-color: #F4F5F8;
@@ -39,7 +46,7 @@ header {
     
 }
 /* Odstranění teček z listů či jak se to jmenuje*/
-ul li {
+header ul li {
     list-style: none; 
 }
 
@@ -93,7 +100,7 @@ header a{
     text-align: center;
 }
 /*to stejná co komentář nad tím*/
-.highlights li, .kulturni-prvky li, .tradice p, .prehled p, .historicke-obdobi li{
+.highlights li, .kulturni-prvky li, .tradice p, .prehled p, .historicke-obdobi li, .zajimavost p, .li1, .li2, .ekuv p{
     font-family: "Cherry Bomb One", serif;
     font-weight: 400;
 }
@@ -115,7 +122,7 @@ header a{
      
 }
 /*Hodně nadpisů co sdílí stejnou věc*/
-.highlights h2, .tradice h2, .kulturni-prvky h2, .gallery h2, .prehled h2, .historicke-obdobi h2, .historie-galerie h2{
+.highlights h2, .tradice h2, .kulturni-prvky h2, .gallery h2, .prehled h2, .historicke-obdobi h2, .historie-galerie h2, .zajimavost h2, .ekuv h2, .eksekt h2, .loskontaktos h2, .ektable h2{
     font-family: "Bebas Neue", serif;
     font-weight: 400;
     font-size: 32px;
@@ -205,11 +212,88 @@ footer div:nth-child(n+3){
 .prehled p{
     text-align: center;
 }
+
+
 /* Stránka Zajímavosti*/
-.zaj{
-    background-color: #ff0000;
-    display: flex;
+.zajimavost{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
 }
+.zajimavost p{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.zajimavost img{
+    height: 75%;
+    width: 90%;
+    border: #F4F5F8 solid 2.5px;
+    border-radius: 10px ;
+}
+.zajimavost a{
+    color: red;
+}
+
+
+/*Ekonomie*/
+ol .li1{
+    list-style: decimal;
+    list-style-position: inside;
+}
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #0056b3;
+    color: white;
+}
+.table-container th{
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+}
+.loskontaktos p, .loskontaktos a{
+    font-family: "Cherry Bomb One", serif;
+    font-weight: 400;
+}
+.loskontaktos{
+    text-align: center;
+}
+.jedemebomby a{
+    font-family: "Cherry Bomb One", serif;
+    text-decoration: double;
+    color: #A51931;
+    font-size: 24px;
+}
+.jedemebomby{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.li1 ul{
+    display: flex;
+    flex-direction: column;
+
+}
+.li2{
+    padding-left: 10%;
+}
+.ekuv p{
+    text-align: center;
+}
+
 /*Tabloid*/
 @media (min-width: 480px) {
     header a{
@@ -221,7 +305,7 @@ footer div:nth-child(n+3){
     footer p{
         font-size: 24px;
     } 
-    ul{
+    header ul{
         display: grid;
         grid-template-columns: auto auto auto;
         grid-template-rows:auto auto auto ; 
@@ -252,11 +336,34 @@ footer div:nth-child(n+3){
         border: #F4F5F8 solid 5Px;
         border-radius: 25px;
     }
-
+/* Stránka Zajímavosti*/
+.zajimavost h2{
+    font-size: 48px; 
+    }
+    .zajimavost p{
+        font-size: 24px;
+    }
 }
-/*Mobajlfoun megafoun telefoun*/
+/*Ek Tablet*/
+.eksekt ol{
+display: grid;
+grid-template-rows: auto auto;
+grid-template-columns: auto auto;
+}
+.ektable th{
+    font-size: 24px;
+}
+.ektable td{
+    font-size: 18px;
+}
+.ek h2{
+    font-size: 36px;
+}
+
+
+/*Kompjůtršpíle*/
 @media (min-width: 1024px) {
-    ul{
+    header ul{
         display: grid;
         grid-template-rows: auto;
         grid-template-columns: auto auto auto auto auto auto ;
@@ -283,7 +390,7 @@ footer div:nth-child(n+3){
     .obr{
         padding-bottom: 25px;
     }
-    .highlights h2, .tradice h2, .kulturni-prvky h2, .gallery h2{
+    .highlights h2, .tradice h2, .kulturni-prvky h2, .gallery h2, .zajimavost h2{
         font-size: 52px;
     }
     .highlights li, .kulturni-prvky li, .tradice p {
@@ -321,6 +428,36 @@ footer div:nth-child(n+3){
     }
     .historicke-obdobi li{
         text-align: left;
+    }
+    /* Stránka Zajímavosti*/
+    #zaj{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        gap: 10px;
+    }
+    .zajimavost img{
+        height: 400px;
+        width: 400px;
+        
+    }
+    .zajimavost{
+        padding-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        align-items: center; 
+    }
+    #zaj > .zajimavost:nth-child(7){
+        grid-column: 2;
+    }
+
+
+    /*EK PC*/
+    .eksekt ol{
+        display: flex;
+        justify-content: space-between;
+
     }
 
 }
