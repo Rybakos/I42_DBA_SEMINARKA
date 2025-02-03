@@ -205,6 +205,11 @@ footer div:nth-child(n+3){
 .prehled p{
     text-align: center;
 }
+/* Stránka Zajímavosti*/
+.zaj{
+    background-color: #ff0000;
+    display: flex;
+}
 /*Tabloid*/
 @media (min-width: 480px) {
     header a{
