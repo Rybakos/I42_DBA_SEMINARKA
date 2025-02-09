@@ -3,84 +3,83 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 $jmeno=$_POST["jmeno"];
 $prijmeni=$_POST["prijmeni"];
 $pohlavi=$_POST["pohlavi"];
-$pozadavky=$_POST["zvl"];
-$rodcis=$_POST["rodocis"];
-$vyber=$_POST["vyber"];
+$hodnoceni=$_POST["hodnoceni"];
+$jine=$_POST["jine"];
+echo "<div class='endphp'>";
+echo"<h1> Vyhodnocení: </h1>";
+echo"<br>";
+echo"<br>";
 
 if($pohlavi=="z"){
- echo"<h1>Vyplnila jste tyto informační údaje:</h1>";
+ echo"Autorka webu: $jmeno $prijmeni";
  echo"<br>";
- echo"Žadatelka: $jmeno $prijmeni";
+ echo"<br>";
 }
 if($pohlavi=="m"){
-  echo"<h1>Vyplnil jste tyto informační údaje:</h1>";
+  echo"Autor webu: $jmeno $prijmeni";
   echo"<br>";
-  echo"Žadatel: $jmeno $prijmeni";
+  echo"<br>";
 }
-echo"<br>";
-echo"Rodné číslo: $rodcis <br>";
-echo"Skupina řidiřského oprávnění:$vyber";
-echo"<br>"; 
-echo"<br>";
-echo"Účel pořízení průkazu: <br>";
-if(isset($_POST["doprava"])){
-echo"doprava do zaměstnání <br>";
+if($hodnoceni=="ujde"){
+  echo"Tento web ujde.";
 }
-if(isset($_POST["prac"])){
-  echo"pracovní účely <br>";
-  }
-if(isset($_POST["prepo"])){
-echo"přeprava osob <br>";
-}
-if(isset($_POST["prepn"])){
-  echo"přeprava nákladu <br>";
-  }
-if(isset($pozadavky)){
-  echo"<br> Zvláštní požadavky:<br>";
-  echo"$pozadavky";
-}    
-echo"<br> <br> Děkujeme za vyplnění formuláře.";
+else{
+  echo"Tento web je $hodnoceni.";
 }
 
+echo"<br>";
+echo"<br>";
+echo"Použité technologie:<br>";
+if(isset($_POST["HTML"])){
+echo"HTML <br>";
+}
+if(isset($_POST["CSS"])){
+  echo"CSS <br>";
+  }
+if(isset($_POST["PHP"])){
+echo"PHP <br>";
+}
+if(isset($_POST["JavaScript"])){
+  echo"JavaScript <br>";
+  }
+if(isset($_POST["ostatny"])){
+
+  echo"$jine";
+
+}
+echo"</div>";"</div>";
+}
 else{
 ?>
-<h2>Řidičský průkaz - informační formulář</h2>
-<form method="post">
-<fieldset>
-<legend>Údaje o žadateli</legend>
-Jméno: <input type="text" size="15" required name="jmeno"><br>
-Příjmení: <input type="text" size="15" required name="prijmeni"><br>
-Rodné číslo: <input type="text" size="30" name="rodocis" placeholder="Zadej rodné číslo i s lomítkem" maxlength="11" minlength="11" required> <br>
-Národnost: <input type="text" size="30" required value="česká" name="NAR">
-</fieldset><br><br>
-Pohlaví: <br>
-žena <input type="radio" checked name="pohlavi" value="z">  
-muž <input type="radio" name="pohlavi" value="m">
-   <br><br>
-
-Skupiny řidičských oprávnění:<br>
-<select name="vyber">
-  <option  value="A motocykly">A motocykly</option>
-  <option  value="B motorová vozidla do 3500 kg">B motorová vozidla do 3500 kg</option>
-  <option selected  value="motorová vozidla nad 3500 kg">C motorová vozidla nad 3500 kg</option>
-  <option  value="D motorová vozidla pro dopravu osob">D motorová vozidla pro dopravu osob</option>
-  <option  value="T zemědělské a technické traktory">T zemědělské a technické traktory</option>
-</select>   
-<br><br>
-Účel pořízení průkazu:<br>
-<input type="checkbox" checked name="doprava"> doprava do zaměstnání <br> 
-<input type="checkbox" name="prac">  pracovní účely<br>
-<input type="checkbox" name="prepo"> přeprava osob<br>             
-<input type="checkbox" name="prepn"> přeprava nákladu<br>
-<br><br>
-
-Zvláštní požadavky:<br>
-<textarea rows="5" cols="40" name="zvl"></textarea>
-<br><br>
-
-<input type="submit" value="Odeslat údaje">
-
-</form>
+<div class="end">
+<form method="POST">
+        <label>Jméno: <input type="text" name="jmeno" required></label><br>
+        <label>Příjmení: <input type="text" name="prijmeni" required></label><br>
+        <p>Pohlaví:
+            <label><input type="radio" name="pohlavi" value="m" required> muž</label>
+            <label><input type="radio" name="pohlavi" value="z"> žena</label>
+        </p>
+        <label>Hodnocení webu:
+            <select name="hodnoceni">
+                <option value="úžasný">úžasný</option>
+                <option value="pěkný">pěkný</option>
+                <option value="ujde">ujde</option>
+                <option value="strašný">strašný</option>
+            </select>
+        </label><br>
+        <p>Použité technologie:</p>
+        <div class="kontext">
+        <label><input type="checkbox" name="HTML" value="HTML"> HTML</label>
+        <label><input type="checkbox" name="CSS" value="CSS"> CSS</label>
+        <label><input type="checkbox" name="PHP" value="PHP"> PHP</label>
+        <label><input type="checkbox" name="PHP" value="PHP"> JavaScript</label>
+        <label><input type="checkbox" name="PHP" value="PHP"> SQL</label>
+        <label><input type="checkbox" name="ostatny" value="ostatny"> Ostatní: </label>
+        </div>
+        <input type="text" name="jine"><br>
+        <button type="submit">Odeslat</button>
+    </form>
+    </div>
 <?php
 
 }
